@@ -48,7 +48,7 @@ We are intrested in following files:
 
 It is only brief descriptions with code examples. Please see run_analysis.R script for full source code 
 
-### Merging
+#### Merging
 
 I merged training and test data as
 
@@ -59,7 +59,7 @@ I merged training and test data as
 
  In the same way I merged, labels and subject data
 
-### Labels
+#### Labels
 
 I loaded features names from features.txt and set them to dataset
 
@@ -67,13 +67,13 @@ I loaded features names from features.txt and set them to dataset
     names(header) <- c("num","title")
     names(metrics) <- header$title
 
-### Extracting measurements
+#### Extracting measurements
 
 I extracted only "mean" and "std" measurements
 
     metrics <- metrics[,grep('mean\\(\\)|std\\(\\)', header$title)]
     
-### Activities
+#### Activities
 
 I loaded activities reference 'activity_labels.txt', changed names of columns to accord label data, and joined it with labels ('test/y_test.txt' and 'train/X_train.txt').
 
@@ -85,14 +85,13 @@ Then I extracted only name column
 
 So instead of ids of labels I've got vector of activity names.    
 
-### Combining
+#### Combining
 
-I added activity and subject columns to main dataset.
+I added activity and subject columns to main dataset as.
 
     metrics <- cbind(metrics, activity)
-    metrics <- cbind(metrics, subjects)
     
-### Aggregation
+#### Aggregation
 
 I aggregated dataframe to get average of each variable for each activity and each subject. 
 
