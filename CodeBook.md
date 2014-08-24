@@ -1,6 +1,6 @@
 # Code Book
 
-This file describes the data, the variables, and the work that has been performed to clean up the data.
+This file describes original datasource, variables, files, and transformations that have been performed to clean up the data.
 
 ## Experiment
 
