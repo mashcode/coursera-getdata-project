@@ -10,6 +10,8 @@ The “Human Activity Recognition Using Smartphones Dataset” consists of weara
 
 The acceleration signal was separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ). Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals).
 
+The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. The angular velocity vector measured by the gyroscope are radians/second. The data was already normalized and bounded within [-1,1]
+
 Where are set of variables that were estimated from these signals: 
 
  * mean(): Mean value
