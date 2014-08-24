@@ -6,8 +6,8 @@ https://class.coursera.org/getdata-006/human_grading/view/courses/972584/assessm
 
 I clean a data set from wearable computing experiments by www.smartlab.ws. See details at http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-I get data from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip and unzip it to working folder.
+You should get data from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip and unzip it to working folder.
 
-R script "run_analysis.R" combines, prepares and aggregates original data.
+The `run_analysis.R` script combines, prepares and aggregates original data.
 
-You can see descriptions of variables and transformations in CodeBook.md
+You can see descriptions of variables and transformations in `CodeBook.md`
