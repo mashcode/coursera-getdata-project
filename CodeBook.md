@@ -21,6 +21,8 @@ Where are set of variables that were estimated from these signals:
  * min(): Smallest value in array
  * and more
 
+So for example variable `tBodyAcc-mean()-Z` is "normalized mean body acceleration on Z axis in certain time window"
+
 ## Data source
 
 Main data page is http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
@@ -100,3 +102,7 @@ I aggregated dataframe to get average of each variable for each activity and eac
     agg_data <- aggregate(metrics[,grep('\\(\\)', names(metrics))], list(Activity = metrics$activity, Subject = metrics$subject_id), mean)
     
 I filtred for aggregation only measurement columns (with "()" in names)
+
+## Result
+
+As result for each combination of subject (person) and activity (walking, sitting etc) we have averages of all `mean` and `std` variables.
