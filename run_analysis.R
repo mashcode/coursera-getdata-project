@@ -8,23 +8,33 @@ metrics <- rbind(
 header <- read.table("UCI HAR Dataset/features.txt")
 names(header) <- c("num","title")
 
+header$title <- gsub("\\(\\)", "", header$title)
+header$title <- gsub("\\(", "_", header$title)
+header$title <- gsub("\\)", "_", header$title)
+header$title <- gsub("-", "_", header$title)
+header$title <- gsub(",", "_", header$title)
+header$title <- gsub("_$", "", header$title)
+header$title
+
 names(metrics) <- header$title
 
 # extracting only the measurements on the mean and standard deviation for each measurement.
-metrics <- metrics[,grep('mean\\(\\)|std\\(\\)', header$title)]
+metrics <- metrics[,grep('mean|std', header$title)]
 
 # adding descriptive activity names
 labels <- rbind(
   read.table("UCI HAR Dataset/train/Y_train.txt"),
   read.table("UCI HAR Dataset/test/Y_test.txt")
 )
-names(labels) <- c("act_id")
+labels <- cbind(labels, row(labels)) # for sorting after merge
+names(labels) <- c("act_id", 'row_id')
 
 ref_activities <-  read.table("UCI HAR Dataset/activity_labels.txt")
 names(ref_activities) <- c("act_id", "activity")
 
-activity <- merge(ref_activities, labels)
-activity <- activity[,2]
+activity <- merge(labels, ref_activities, by="act_id")
+activity <- activity[order(activity$row_id), "activity"]
+
 
 metrics <- cbind(metrics, activity)
 
