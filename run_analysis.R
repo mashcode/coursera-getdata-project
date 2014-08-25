@@ -48,5 +48,5 @@ names(subjects) <- c("subject_id")
 metrics <- cbind(metrics, subjects)
 
 # data set with the average of each variable for each activity and each subject. 
-agg_data <- aggregate(metrics[,grep('\\(\\)', names(metrics))], list(Activity = metrics$activity, Subject = metrics$subject_id), mean)
+agg_data <- aggregate(metrics[,grep('mean|std', names(metrics))], list(Activity = metrics$activity, Subject = metrics$subject_id), mean)
 write.table(agg_data, file = "UCI HAR Dataset/tidy_data_set.txt", row.name=FALSE)
